@@ -32,7 +32,6 @@
       $('ul.nav > li').click(function(){
         var index = $('ul.nav > li').index(this);
         $('ul.contents > li').addClass('is-hidden')
-        $('ul.contents > li').eq(index).css('display','block');
         $('ul.contents > li').eq(index).removeClass('is-hidden'); 
         
         
