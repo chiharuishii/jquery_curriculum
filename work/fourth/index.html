@@ -81,9 +81,10 @@
 
   $(function() {
     $("ul.menu__list > li").hover(function() {
-    $("ul:not(:animated)", this).slideDown();
+    // $("ul:not(:animated)", this).slideDown();
+    $(this).children("ul").stop().slideDown();
     }, function(){
-    $("ul.menu__list__childList").slideUp();
+    $(this).children("ul").stop().slideUp();
     });
 });
 </script>

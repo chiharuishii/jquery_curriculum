@@ -88,11 +88,13 @@
         $(".select").change(function(){ 
         var v=$(this).val(); 
         if(v=="all"){
-        $('ul.list li').each(function(){ $(this).show() }); 
+        // $('ul.list li').each(function(){ $(this).show() }); 
+        $('ul.list li').show(); 
+
       } else {
         $('ul.list li').each(function(){
         if($(this).data("category-type")==v){ 
-        $(this).show(); 
+        $(this).show();
         } else {
         $(this).hide(); 
         }

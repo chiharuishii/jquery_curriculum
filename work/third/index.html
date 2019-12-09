@@ -28,6 +28,7 @@
     </div>
     <script src="../../common/js/jquery.js"></script>
     <script>
+      $(function(){
 
       $('ul.nav > li').click(function(){
         var index = $('ul.nav > li').index(this);
@@ -36,7 +37,8 @@
         
         
         
-      })
+      });
+      });
       // 今回やるのはタブメニューです。
       // navの小要素であるliをクリックして、contents内の小要素であるli要素を表示させる。
       // .index() 要素のindexを取得します。
