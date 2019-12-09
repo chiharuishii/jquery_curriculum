@@ -24,25 +24,54 @@
     <script>
 
       
-      $(function(){
-        var text_max = 30;
-        // var count =$('this').val().replace(/\s+/g,'').length;
+      // $(function(){
+      //   var text_max = 30;
+      //   // var count =$('this').val().replace(/\s+/g,'').length;
        
 
-        $('.input').on('keyup',function(){
-          var text_length = $('this').val().replace(/\s+/g,'').length;
-          var countdown = text_max - text_length;
-          $('.rest-count').text(countdown);
+      //   $('.input').on('keyup',function(){
+      //     var text_length = $('this').val().replace(/\s+/g,'').length;
+      //     var countdown = text_max - text_length;
+      //     $('.rest-count').text(countdown);
 
-          if(countdown < 0){
-            $('.rest-count').addClass('.red');
-          } else {
-          $('.rest-count').removeClass('.red')
-           };
+      //     if(countdown < 0){
+      //       $('.rest-count').addClass('.red');
+      //     } else {
+      //     $('.rest-count').removeClass('.red')
+      //      };
           
         
           
           
+      //   });
+
+        // $(function(){
+        //   $('.input').keyup(function(){
+        //     if($(this).val().replace(/\s+/g,'').length<= 30){
+        //       $('.rest-count').removeClass('.red');
+        //     }else{
+        //       $('.rest-count').addClass('.red');
+        //     }
+
+
+        //   });
+        // });
+
+        $(function(){
+          var text_max = 30;
+          $('.input').keyup(function(){
+            
+            var count = $(this).val().replace(/\s+/g,'').length;
+            var rest  = text_max - count;
+            $('.rest-count').text(rest);
+
+            if(rest < 0){
+              $('.rest-count').addClass('red');
+            }else{
+              $('.rest-count').removeClass('red');
+            };
+
+          });
         });
 
       
@@ -52,6 +81,7 @@
       //  .rest-count の値が減っていき、最大文字数である30文字以上入力すると 
       //  .rest-count に .red クラスが追加されて文字色が赤くなり、30文字以内になると、
       //  .red クラスが外れ、文字色が元に戻る。（ちなみに改行は文字数に含まない。）
+      
       // .keyup() 文字入力後に発火されるイベントです。
       // .replace(/\s+/g,'').length 改行を含まない文字数を取得します。
       // .val() input要素のvalueを取得します。
